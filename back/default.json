@@ -1,0 +1,34 @@
+{
+    "badgeId": "xxx",
+    "name": "Default Name",
+    "surname": "Default SurnName",
+    "type": "M",
+    "internalMail": "xxx.yyy@internal.acme.com",
+    "externalMail": "xxx.yyy.addams@acme.com",
+    "tel": "331123456",
+    "mobile": "336123456",
+    "tower": "Tower One",
+    "floor": "7",
+    "manager": "Unknown (cause minimal data)",
+    "assistant": "Ricky Lewis",
+    "unitId": "123456",
+    "job": {
+        "code": "1",
+        "text": "CEO"
+    },
+    "address": {
+        "adressId": "1",
+        "address1": "10, rue Diderot",
+        "address2": "",
+        "postalCode": "75007",
+        "tower": "Lunar Tower",
+        "floor": "3e",
+        "officeNumber": "",
+        "city": "Paris",
+        "country": "France"
+    },
+    "unit": {
+        "unitId": "1",
+        "name": "Head-Paris"
+    }
+}

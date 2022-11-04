@@ -1,0 +1,89 @@
+.spinner {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    bottom: 0;
+}
+.backdrop {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    width:100%;
+    min-width:100%;
+    max-width:100%;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    margin-top: 5px;
+    background-color:navy;
+}
+.toolbar .btn {
+    color:white;
+    font-size: x-large;
+    border:none;
+}
+.toolbar .btn:focus, .toolbar .btn.focus {
+    outline: 0;
+    box-shadow: inset 0 0 0 0rem transparent;
+}
+
+.searchPanel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 80%;
+    height: 50%;
+    background-color: white;
+    border-color: grey;
+    border-style: solid;
+    -webkit-box-shadow: 0px 0px 20px 0px #000000; 
+    box-shadow: 0px 0px 20px 0px #000000;
+    overflow-y: auto;
+}
+
+.searchPanel-pane {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 15px 15px 15px;
+    font-size: smaller;
+}
+
+.searchPanel-pane input {
+    border-radius: 5px;
+    border: lightgray solid 2px;
+}
+
+.searchmodalheader {
+    height:40px;
+    background-color: navy;
+}
+
+.close-button {
+    position: absolute;
+    top: -1.5rem;
+    right: 0px;
+    border-radius: 5px;
+    font-size: xxx-large;
+    color: white;
+}
+
+.search-button {
+    width: 30%;
+    align-self: center;
+    background-color: navy;
+    border-color: navy;
+}

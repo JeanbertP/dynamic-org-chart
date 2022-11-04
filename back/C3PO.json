@@ -1,0 +1,105 @@
+{
+    "totalElements": 1,
+    "content": [
+        {
+            "badgeId": "13",
+            "name": "PO",
+            "surname": "C3",
+            "type": "M",
+            "internalMail": "c3.po@internal.acme.com",
+            "externalMail": "c3.po@acme.com",
+            "tel": "331123456",
+            "mobile": "336123456",
+            "tower": "Tower Two",
+            "floor": "7",
+            "manager": {
+                "badgeId": "1",
+                "name": "Addams",
+                "surname": "Gomez",
+                "type": "M",
+                "internalMail": "gomez.addams@internal.acme.com",
+                "externalMail": "gomez.addams@acme.com",
+                "tel": "331123456",
+                "mobile": "336123456",
+                "tower": "Tower One",
+                "floor": "7",
+                "manager": {
+                    "badgeId": "46309416",
+                    "name": "Addams",
+                    "surname": "BigBoss",
+                    "type": "M",
+                    "internalMail": "bigboss.addams@internal.acme.com",
+                    "externalMail": "bigboss.addams@acme.com",
+                    "tel": "331123456",
+                    "mobile": "336123456",
+                    "tower": "Tower One",
+                    "floor": "7",
+                    "manager": null,
+                    "assistant": "Ricky Lewis",
+                    "unitId": "123456",
+                    "job": {
+                        "code": "1",
+                        "text": "CEO"
+                    },
+                    "address": {
+                        "adressId": "1",
+                        "address1": "10, rue Diderot",
+                        "address2": "",
+                        "postalCode": "75007",
+                        "tower": "Tower One",
+                        "floor": "3e",
+                        "officeNumber": "34",
+                        "city": "Paris",
+                        "country": "France"
+                    },
+                    "unit": {
+                        "unitId": "1",
+                        "name": "Head-Paris"
+                    }
+                },
+                "assistant": "Ricky Lewis",
+                "unitId": "123456",
+                "job": {
+                    "code": "2",
+                    "text": "Director"
+                },
+                "address": {
+                    "adressId": "1",
+                    "address1": "10, rue Diderot",
+                    "address2": "",
+                    "postalCode": "75007",
+                    "tower": "",
+                    "floor": "3e",
+                    "officeNumber": "",
+                    "city": "Paris",
+                    "country": "France"
+                },
+                "unit": {
+                    "unitId": "1",
+                    "name": "Head-Paris"
+                }
+            },
+            "assistant": "Ricky Lewis",
+            "unitId": "123456",
+            "job": {
+                "code": "4",
+                "text": "Developer"
+            },
+            "address": {
+                "adressId": "1",
+                "address1": "10, rue Diderot",
+                "address2": "",
+                "postalCode": "75007",
+                "tower": "",
+                "floor": "3e",
+                "officeNumber": "",
+                "city": "Paris",
+                "country": "France"
+            },
+            "unit": {
+                "unitId": "1",
+                "name": "Factory1 at Nantes"
+            }
+        }
+    ]
+}

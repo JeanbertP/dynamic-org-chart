@@ -1,0 +1,114 @@
+<ng-template #PersonModalTemplate>
+    <div class="modal-header">
+        <div>
+            <h2 class="modal-title pull-left">{{currentPerson?.surname}} {{currentPerson?.name}}</h2>
+            <h3 class="modal-title pull-left">{{currentPerson?.job.text}}</h3>
+        </div>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <div>
+            <h5 class="text-primary">Person</h5>
+            <div><label class="font-weight-bold mr-3">Manager</label><span>{{currentPerson?.manager?.surname||"Noone"}}
+                    {{currentPerson?.manager?.name}}</span></div>
+            <div><label class="font-weight-bold mr-3">Assistant</label><span>{{currentPerson?.assistant?.surname}}
+                    {{currentPerson?.assistant}}</span></div>
+            <div><label class="font-weight-bold mr-3">Unit</label><span>{{currentPerson?.unit?.unitId}} - 
+                    {{currentPerson?.unit?.name}}</span></div>
+
+            <h5 class="mt-3 text-primary">Coordonnées</h5>
+            <div><label class="font-weight-bold mr-3">Phone
+                    </label><span>{{currentPerson?.tel}}</span></div>
+            <div><label class="font-weight-bold mr-3">Mobile
+                    </label><span>{{currentPerson?.mobile}}</span></div>
+            <div><label class="font-weight-bold mr-3">Internal email
+                    </label><span>{{currentPerson?.internalMail}}</span>
+            </div>
+            <div><label class="font-weight-bold mr-3">External email</label><span>{{currentPerson?.externalMail}}</span>
+            </div>
+        </div>
+
+        <h5 class="mt-3 text-primary">Postal Address</h5>
+        <div>{{currentPerson?.address?.address1}}</div>
+        <div>{{currentPerson?.address?.address2}}</div>
+        <div>{{currentPerson?.address?.postalCode}} {{currentPerson?.address?.city}} -
+            {{currentPerson?.address?.country}}</div>
+        <div><label class="font-weight-bold mr-3">tower</label><span>{{currentPerson?.address?.tower}}</span>
+        </div>
+        <div><label class="font-weight-bold mr-3">Floor</label><span>{{currentPerson?.address?.floor}}</span></div>
+        <div><label class="font-weight-bold mr-3">Office number</label><span>{{currentPerson?.address?.officeNumber}}</span>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">Close</button>
+    </div>
+</ng-template>
+
+<div class="spinner" *ngIf="loading">
+    <span class="backdrop"></span>
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+</div>
+
+<div class="toolbar">
+    <button class='btn rounded-circle btn-sm ml-1' (click)='chart.zoomOut()'>
+        <span class="bi bi-zoom-out"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-1' (click)='chart.zoomIn()'>
+        <span class="bi bi-zoom-in"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-5' (click)='compact=0;chart.compact(0).render()'>
+        <span class="bi bi-diagram-3"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-1' (click)='compact=1;chart.compact(1).render()'>
+        <span class="bi bi-grid-3x2-gap"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-5' (click)='setDirectionTree()'>
+        <span class="bi bi-arrow-clockwise"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-1' (click)='chart.fit()'>
+        <span class="bi bi-border-outer"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-5' (click)='chart.fullscreen()'>
+        <span class="bi bi-fullscreen"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-5' (click)='exportToSvg()'>
+        <span class="bi bi-file-earmark-image"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-1' (click)='exportToPdf()'>
+        <span class="bi bi-file-earmark-pdf"></span>
+    </button>
+    <button class='btn rounded-circle btn-sm ml-5' (click)='openEmployeesSearchModal()'>
+        <span class="bi bi-search"></span>
+    </button>
+</div>
+<div *ngIf="searchPanel" class="searchPanel">
+    <div class="">
+        <div class="searchmodalheader btn-info">
+            <div class='btn close-button' (click)='closeEmployeesSearchModal();'>&times;</div>
+        </div>
+        <div class="searchPanel-pane d-flex flex-column">
+            <label for="name" class="mt-2 mb-0">Name</label>
+            <input #name id="name" name="name" type="text" [(ngModel)]="employeeName">
+            <label id="surname" for="surname" class="mt-2 mb-0">Surname</label>
+            <input name="surname" type="text" [(ngModel)]="employeeSurname">
+            <button class='btn btn-info btn-sm mt-3 ml-10 mr-10 search-button' (click)='search()'>
+                <span class="bi bi-search"> Search</span>
+            </button>
+        </div>
+        <div class="">
+            <ul class="list-group mt-2">
+                <li *ngFor="let emp of searchedEmployees" class="list-group-item"
+                    (click)="onClickEmployeeInListSearchModal(emp.badgeId)">
+                    {{emp?.name}} {{emp?.surname}} - {{emp?.job?.text}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div #chartContainer id="chartContainer"></div>
